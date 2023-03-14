@@ -26,22 +26,24 @@
     <h1>Fruit Store</h1>
     <div >
         <table class="table ">
-            <tr>
-                <th>Name</th>
-                <th>Fruit Price</th>
-            </tr>
-            <tr>
-                <td>
-                    <c:forEach var="eachFruit" items="${Fruits}">
-                        <p><c:out value ="${eachFruit.name}"></c:out></p>
-                    </c:forEach>
-                </td>
-                <td>
-                    <c:forEach var="eachFruit" items="${Fruits}">
-                        <p><c:out value ="${eachFruit.price}"></c:out></p>
-                    </c:forEach>
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Fruit Price</th>
+                </tr>
+                <tr>
+            </thead>
+            <tbody>
+                <c:forEach var="eachFruit" items="${Fruits}">
+                    <tr>
+                        <td>
+                            <c:out value="${eachFruit.name}"></c:out>
+                        </td>
+                        <td>
+                            <c:out value="${eachFruit.price}"></c:out>
+                    </tr>
+                </c:forEach>
+            </tbody>
         </table>
     </div>
 </body>
