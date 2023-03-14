@@ -19,13 +19,13 @@ public class Testorders {
 
 
 
-        // order1.total += order1.items.price;
-        // order1.ready = true;
+        order1.total += order1.items.price;
+        order1.ready = true;
 
         // Application Simulations
         // Use this example code to test various orders' updates
-        // System.out.printf("Name: %s\n", order1.name);
-        // System.out.printf("Total: %s\n", order1.total);
-        // System.out.printf("Ready: %s\n", order1.ready);
+        System.out.printf("Name: %s\n", order1.name);
+        System.out.printf("Total: %s\n", order1.total);
+        System.out.printf("Ready: %s\n", order1.ready);
     }
 }
