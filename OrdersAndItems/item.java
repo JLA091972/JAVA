@@ -1,13 +1,12 @@
 package JAVA.OrdersAndItems;
 
 public class item {
-    String name;
-    double price;
+    public String name;
+    public double price;
 
     public item(String name, double price) {
         this.name = name;
         this.price = price;
     }
-
 
 }
