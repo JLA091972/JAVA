@@ -1,0 +1,17 @@
+h1 {
+    padding-left: 150px;
+    color: blueviolet;
+}
+
+
+.displaybox {
+    height: 200px;
+    width: 500;
+    margin-left: 100px;
+    background-color: antiquewhite;
+    border: 2px black solid;
+}
+
+.btn {
+    margin-left: 100px;
+}
