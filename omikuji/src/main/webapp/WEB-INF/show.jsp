@@ -20,17 +20,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omikuji </title>
+    <title>Show the Omikuji </title>
 </head>
 <body>
-    <h1>Showing Your Omikuji</h1>
+    <h1>Showing Your Omikuji &#129376</h1>
     <div class="displaybox">
-        <h5>
-            In ${number} years, you will live in ${city} with ${person} as your room mate,
-            doing ${hobby} for a living.  The next time you see a ${livingthing}, you will have good luck.
-            Also, ${comment}
-        </h5>
-    </div>
+        <p>
+            In ${number} years &#8987 you will live in ${city} &#127751 with ${person} as your room mate,
+            doing ${hobby} for a living.  The next time you see a ${livingthing}, you will have good luck &#127808.
+            Also, ${comment} 
+        </p>
+        <p style="font-size:48px">
+            &#128516; 
+        </p>
+        
+        </div>
     <button onclick="location.href='/'"  class="btn btn-primary">Omikuji</button>
     </body>
     

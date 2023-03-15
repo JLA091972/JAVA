@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -34,7 +33,7 @@ public class MainController {
         session.setAttribute("livingthing", livingthing);
         session.setAttribute("comment", comment);
 
-        System.out.printf("%d %s %s %s %s %s ", number, city, person, hobby, livingthing, comment);
+        // System.out.printf("%d %s %s %s %s %s ", number, city, person, hobby, livingthing, comment);
         return "redirect:/show";
     }
 
