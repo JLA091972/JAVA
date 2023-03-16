@@ -85,8 +85,8 @@ spring.mvc.hiddenmethod.filter.enabled=true
 
 - [ ] add a view for show one [show.jsp](./src/main/webapp/WEB-INF/show.jsp)
 - [ ] add a view for New [new.jsp](./src/main/webapp/WEB-INF/new.jsp)
-- [ ] add a view for Update [update.jsp](./src/main/webapp/WEB-INF/new.jsp)
-
+- [ ] add a view for Update [update.jsp](./src/main/webapp/WEB-INF/update.jsp)
+- [ ] add a view for Edit [update.jsp](./src/main/webapp/WEB-INF/edit.jsp)
 
 
 

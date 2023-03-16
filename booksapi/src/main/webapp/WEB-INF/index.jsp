@@ -40,12 +40,12 @@
             <c:forEach var="book" items="${books}">
                 <tr>
                     <td>${book.author}</td>
-                    <td>${book.title}</td>
+                    <td>
+                        <a href="/books/${book.id}">${book.title}</a> </td>
                     <td>${book.pages}</td>
                 </tr>
             </c:forEach>
         </tbody>
-
     </table>
 </body>
 

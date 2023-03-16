@@ -27,7 +27,15 @@
 </head>
 
 <body>
-    <h1>HELLO!!</h1>
+    
+    <h1>Your book Selection</h1>
+    <div class="display">
+        <h2> Author: ${book.author}</h2>
+        <h2> Title: ${book.title}</h2>
+        <h2> Pages : ${book.pages}</h2>
+
+    </div>
+
 </body>
 
 </html>
