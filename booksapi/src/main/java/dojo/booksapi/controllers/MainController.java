@@ -7,17 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import dojo.booksapi.models.Book;
-import dojo.booksapi.repositories.BookRepository;
+import dojo.booksapi.services.BookService;
 
 @Controller
 public class MainController {
 
-    @Autowired BookRepository bookRepository;
+    @Autowired BookService bookService;
 
     //! Create
+    @GetMapping("/book/new")
+    public String newBook(@ModelAttribute("book") Book book){
+        return "new.jsp";
+
+
+    }
 
     
 
