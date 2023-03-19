@@ -2,7 +2,6 @@ package dojo.savetravels.controllers;
 
 import java.util.List;
 
-import javax.print.DocFlavor.READER;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +30,7 @@ public class MainController {
     public String index(@ModelAttribute("item") Travel item, Model model) {
         List<Travel> items = travelService.getAllItems();   //read all
         // System.out.println(items);
+
         model.addAttribute("items", items);   //this will populate information on table
         return "index.jsp";
     }
@@ -38,7 +38,10 @@ public class MainController {
     //handle the form data
     @PostMapping("/expenses")
     public String createExpense(@Valid @ModelAttribute("item") Travel item, BindingResult results) {
+    // public String createExpense(@Valid @ModelAttribute("item") Travel item, Model model, BindingResult results) {
         if (results.hasErrors()) {
+            // List<Travel> items = travelService.getAllItems(); // read all
+            // model.addAttribute("items", items);
             return "index.jsp";
         } else {
             travelService.createExpense(item);
@@ -65,12 +68,17 @@ public class MainController {
     }
 
     // @PutMapping("/expenses/{id}")
-    // public String update(@ModelAttribute("item") Travel item) {
-    //     System.out.println(item);
-    //     travelService.updateExpense(item);
-    //     return "redirect:/";
-    // }
-
+    // public String update(@Valid @ModelAttribute("item") Travel item, BindingResult results) {
+    // if(results.hasErrors()){
+    //     return "expenses/edit.jsp";
+    // }else
+    // {
+    //     // System.out.println(item);
+    //     // travelService.updateExpense(item);
+    //     // return "redirect:/";
+    //     }
+    
+    
 
     //Delete
     @DeleteMapping("/expenses/{id}")
@@ -78,7 +86,6 @@ public class MainController {
         Travel item = travelService.getOneItem(id);
         travelService.deleteItem(item);
         return "redirect:/";
-
     }
 
 

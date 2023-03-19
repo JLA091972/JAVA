@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -29,7 +30,7 @@ public class Travel {
     private String vendor;
 
     @NotNull
-    @Size(min=1, max=100, message ="Need at least 1")
+    @Min(value=1, message="Need at least $1.0")
     private double amount;
 
     @NotBlank
