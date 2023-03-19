@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -19,16 +22,18 @@ public class Travel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    // //Expense
     private String expense;
 
-    // //Vendor
+    @NotBlank
+    @Size(min=2, max=20, message="Need at least 2 and max of 20 max characteres")
     private String vendor;
 
-    // //Amount
+    @NotNull
+    @Size(min=1, max=100, message ="Need at least 1")
     private double amount;
 
-    //Description
+    @NotBlank
+    @Size(min = 2, max = 20, message = "Need at least 2 and max of 20 max characteres")
     private String description;
 
     @Column(updatable = false)
