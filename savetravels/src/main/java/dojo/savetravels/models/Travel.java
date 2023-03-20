@@ -23,6 +23,7 @@ public class Travel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @NotBlank
     private String expense;
 
     @NotBlank
@@ -30,7 +31,7 @@ public class Travel {
     private String vendor;
 
     @NotNull
-    @Min(value=1, message="Need at least $1.0")
+    @Min(value=0, message="Need at least $1.0")
     private double amount;
 
     @NotBlank

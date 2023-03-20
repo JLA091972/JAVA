@@ -23,11 +23,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ninjas</title>
 </head>
 
 <body>
-    <h1>Hello To the Dojo!</h1>
+    <h1>Add a Ninja!</h1>
+
+    <form:form action="/ninjas" method="post" modelAttribute="ninja" >
+        <form:select path="dojo" >
+            <c:forEach var="dojo" items="${dojos}">
+                <form:option value="${dojo.id}">${dojo.name}</form:option>
+            </c:forEach>
+            
+        </form:select>
+        <form:label path="firstname">Ninja First Name</form:label>
+        <form:input path="firstname"></form:input>
+
+        <form:label path="lastname">Ninja Last Name</form:label>
+        <form:input path="lastname"></form:input>
+
+        <form:label path="age">Ninja Age</form:label>
+        <form:input path="age"></form:input>
+
+        <input type="submit" value="Add Ninja">
+    </form:form>
 
 </body>
 

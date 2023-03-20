@@ -30,7 +30,8 @@
     <h1>Travel Expense Record</h1>
     <h4>Add Expenses</h4>
     <!-- modelAttribute item declared on MainController.jsp  -->
-    <form:form action="/expenses/${expenses.id}" method="post" modelAttribute="item">
+    <form:form action="/expenses/update/${expenses.id}" method="post" modelAttribute="expenses">
+        <input type="hidden" name="_method" value="put">
         <p>
             <form:label path="expense">Expense Name:</form:label>
             <form:errors path="expense" />

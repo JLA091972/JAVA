@@ -23,12 +23,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Show All Ninjas</title>
 </head>
 
 <body>
-    <h1>Hello To the Ninjas!</h1>
-
+    <h1>Dojos List</h1>
+<div>
+    <table class="table ">
+        <thead>
+            <tr>
+                <th>Dojo Name</th>
+            </tr>
+            <tr>
+        </thead>
+        <tbody>
+            <c:forEach var="dojo" items="${dojos}">
+                <tr>
+                    <td><a href="/dojo/${dojo.id}">${dojo.name}</a></td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+</div>
 </body>
 
 </html>

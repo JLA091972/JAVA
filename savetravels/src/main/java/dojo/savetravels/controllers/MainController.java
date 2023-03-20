@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import dojo.savetravels.models.Travel;
 import dojo.savetravels.services.TravelService;
@@ -40,14 +41,12 @@ public class MainController {
     public String createExpense(@Valid @ModelAttribute("item") Travel item, BindingResult results) {
     // public String createExpense(@Valid @ModelAttribute("item") Travel item, Model model, BindingResult results) {
         if (results.hasErrors()) {
-            // List<Travel> items = travelService.getAllItems(); // read all
-            // model.addAttribute("items", items);
+            // return "redirect:/";
             return "index.jsp";
         } else {
             travelService.createExpense(item);
             return "redirect:/";
         }
-        
     }
 
     //Read One
@@ -62,22 +61,21 @@ public class MainController {
     @GetMapping("/expenses/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model) {
         Travel expenses = travelService.getOneItem(id);
-        model.addAttribute("item", expenses);
+        model.addAttribute("expenses", expenses);
         System.out.println(expenses);
-        return "expenses/edit.jsp";
+        return "edit.jsp";
     }
 
-    // @PutMapping("/expenses/{id}")
-    // public String update(@Valid @ModelAttribute("item") Travel item, BindingResult results) {
-    // if(results.hasErrors()){
-    //     return "expenses/edit.jsp";
-    // }else
-    // {
-    //     // System.out.println(item);
-    //     // travelService.updateExpense(item);
-    //     // return "redirect:/";
-    //     }
-    
+    @PutMapping("/expenses/update/{id}")
+    public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("expenses") Travel item, BindingResult results, Model model) {
+        if (results.hasErrors()) {
+            return "expenses/edit.jsp";
+        } else {
+            System.out.println(item);
+            travelService.updateExpense(item);
+            return "redirect:/";
+        }
+    }
     
 
     //Delete

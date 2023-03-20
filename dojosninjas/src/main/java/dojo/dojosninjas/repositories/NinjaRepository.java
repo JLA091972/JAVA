@@ -1,5 +1,9 @@
 package dojo.dojosninjas.repositories;
 
-public class NinjaRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import dojo.dojosninjas.models.Ninja;
+
+public interface NinjaRepository extends CrudRepository<Ninja, Long> {
     
 }

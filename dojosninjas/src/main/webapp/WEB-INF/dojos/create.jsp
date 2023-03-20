@@ -23,14 +23,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dojos</title>
 </head>
 
 <body>
     <h1>Add a Dojo!</h1>
 
     <form:form action="/dojos" method="post" modelAttribute="dojo" >
-        <form:label path="name"></form:label>
+        <form:label path="name">Dojo Name</form:label>
         <form:input path="name"></form:input>
         <input type="submit" value="Create New Dojo">
     </form:form>

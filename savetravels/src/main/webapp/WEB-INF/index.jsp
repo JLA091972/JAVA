@@ -24,7 +24,8 @@
     <title>Travel Saving</title>
 </head>
 <body>
-    <h1>Travel Expense Record</h1>
+    <div class="container">
+        <h1>Travel Expense Record</h1>
         <table class="table ">
             <thead>
                 <tr>
@@ -49,36 +50,38 @@
                             </form>
 
                         </td>
-                        
+
                 </c:forEach>
             </tbody>
         </table>
+    </div>
 
-
-    <h4>Add Expenses</h4>
-    <!-- modelAttribute item declared on MainController.jsp  -->
-    <form:form action="/expenses" method="post" modelAttribute="item">
-        <p>
-            <form:label path="expense">Expense Name:</form:label>
-            <form:errors path="expense" />
-            <form:input path="expense"></form:input>
-        </p>        
-        <p>
-            <form:label path="vendor">Vendor:</form:label>
-            <form:errors path="vendor" />
-            <form:input path="vendor"></form:input>
-        </p>        
-        <p>
-            <form:label path="amount">Amount:</form:label>
-            <form:errors path="amount" />
-            <form:input path="amount"></form:input>
-        </p>
-        <p>
-            <form:label path="description">Description:</form:label>
-            <form:errors path="description" />
-            <form:input path="description"></form:input>
-        </p>
-        <input type="submit" value="Create an Expense">
-    </form:form>
+    <div class="container">
+        <h4>Add Expenses</h4>
+        <!-- modelAttribute item declared on MainController.jsp  -->
+        <form:form action="/expenses" method="post" modelAttribute="item">
+            <p>
+                <form:label path="expense">Expense Name:</form:label>
+                <form:errors path="expense" />
+                <form:input path="expense"></form:input>
+            </p>
+            <p>
+                <form:label path="vendor">Vendor:</form:label>
+                <form:errors path="vendor" />
+                <form:input path="vendor"></form:input>
+            </p>
+            <p>
+                <form:label path="amount">Amount:</form:label>
+                <form:errors path="amount" />
+                <form:input path="amount"></form:input>
+            </p>
+            <p>
+                <form:label path="description">Description:</form:label>
+                <form:errors path="description" />
+                <form:input path="description"></form:input>
+            </p>
+            <input type="submit" value="Create an Expense">
+        </form:form>
+    </div>
 </body>
 </html>
