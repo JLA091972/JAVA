@@ -38,10 +38,11 @@ public class MainController {
     
     //handle the form data
     @PostMapping("/expenses")
-    public String createExpense(@Valid @ModelAttribute("item") Travel item, BindingResult results) {
+    public String createExpense(@Valid @ModelAttribute("item") Travel item, BindingResult results, Model model) {
     // public String createExpense(@Valid @ModelAttribute("item") Travel item, Model model, BindingResult results) {
         if (results.hasErrors()) {
-            // return "redirect:/";
+            List<Travel> items = travelService.getAllItems(); // read all
+            model.addAttribute("items", items); // this will populate information on table
             return "index.jsp";
         } else {
             travelService.createExpense(item);
@@ -69,7 +70,7 @@ public class MainController {
     @PutMapping("/expenses/update/{id}")
     public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("expenses") Travel item, BindingResult results, Model model) {
         if (results.hasErrors()) {
-            return "expenses/edit.jsp";
+            return "edit.jsp";
         } else {
             System.out.println(item);
             travelService.updateExpense(item);

@@ -62,13 +62,13 @@
         <form:form action="/expenses" method="post" modelAttribute="item">
             <p>
                 <form:label path="expense">Expense Name:</form:label>
-                <form:errors path="expense" />
                 <form:input path="expense"></form:input>
+                <form:errors path="expense" class="text-danger" />
             </p>
             <p>
                 <form:label path="vendor">Vendor:</form:label>
-                <form:errors path="vendor" />
                 <form:input path="vendor"></form:input>
+                <form:errors path="vendor" class="text-danger" />
             </p>
             <p>
                 <form:label path="amount">Amount:</form:label>

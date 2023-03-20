@@ -54,6 +54,7 @@
         </p>
         <input type="submit" value="Update an Expense">
     </form:form>
+    <button onclick="location.href='/'" class="btn btn-primary">Cancel</button>
 </body>
 
 </html>
